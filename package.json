@@ -1,0 +1,25 @@
+{
+  "name": "joshmu.com",
+  "version": "1.0.0",
+  "description": "joshmu.com official website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshmu/joshmu.com-2019.git"
+  },
+  "keywords": [
+    "josh",
+    "mu",
+    "website"
+  ],
+  "author": "josh mu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshmu/joshmu.com-2019/issues"
+  },
+  "homepage": "https://github.com/joshmu/joshmu.com-2019#readme",
+  "dependencies": {}
+}

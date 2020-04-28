@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   /* ---------------------------------------------- /*
    * Twitter
   /* ---------------------------------------------- */
@@ -16,6 +16,10 @@ $(document).ready(function() {
    * Use this as your ID below instead!
    */
 
+  // ! TWITTER ISN'T WORKING, NEED TO MOVE TO USING OAUTH1, CREDS ARE IN MY NOTES ON MY LOCAL COMP
+  // so... removing any mention of twitter for now
+  $('.twitter-logo').remove()
+
   // new verion!!! widget id is deprecated
   var config = {
     profile: { screenName: 'josh_mu_' },
@@ -27,39 +31,8 @@ $(document).ready(function() {
     showImages: false,
     showInteraction: false,
     customCallback: handleTweets,
-    lang: 'en'
+    lang: 'en',
   }
-
-  /*
-var configOld = {
-     "id": '390044238685011968',      //josh mu widget = 390044238685011968
-  "profile": {"screenName": 'josh_mu_'},
-     "domId": 'jmu',
-     "maxTweets": 5,
-     "enableLinks": true,
-     "showUser": false,
-     "showTime": true,
-     "dateFunction": '',
-     "showRetweet": false,
-     "customCallback": handleTweets,
-     "showInteraction": false,
-     "showImages": false
-   };
-   */
-
-  /*
-var configProfile = {
-  "profile": {"screenName": 'jason_mayes'},
-  "domId": 'example1',
-  "maxTweets": 1,
-  "enableLinks": true, 
-  "showUser": true,
-  "showTime": true,
-  "showImages": true,
-  "lang": 'en'
-};
-twitterFetcher.fetch(configProfile);
-*/
 
   function handleTweets(tweets) {
     console.log('tweet tweet')
@@ -78,7 +51,7 @@ twitterFetcher.fetch(configProfile);
     // remove emojis
     $twitterNews.find('img').remove()
     // remove 'Posted on' text
-    $twitterNews.find('.timePosted').each(function(index, element) {
+    $twitterNews.find('.timePosted').each(function (index, element) {
       var $elem = $(element)
       var text = $elem.children('a').text()
       var text = text.replace('Posted on ', '')
@@ -97,62 +70,9 @@ twitterFetcher.fetch(configProfile);
       smartSpeed: 450,
       autoplayTimeout: 4500,
       autoplayHoverPause: false,
-      dots: false
+      dots: false,
     })
   }
 
   twitterFetcher.fetch(config)
-
-  /*
-  var twitterConfig = {
-      id: '390044238685011968',
-      domId: '',
-      maxTweets: 5,
-      enableLinks: true,
-      showUser: false,
-      customCallback: handleTweets
-  };
-
-  twitterFetcher.fetch(twitterConfig);
-
-  function handleTweets(tweets) {
-      var x = tweets.length;
-      var n = 0;
-      var html = '';
-      while (n < x) {
-          // html += '<div>' + tweets[n] + '</div>';
-          html += tweets[n];
-          n++;
-      }
-      $('.twitterNews').html(html);
-
-      $('.twitter_retweet_icon').html('<i class="fa fa-retweet"></i>');
-      $('.twitter_reply_icon').html('<i class="fa fa-reply"></i>');
-      $('.twitter_fav_icon').html('<i class="fa fa-star"></i>');
-
-      $('.twitterNews').owlCarousel({
-          singleItem: true,
-          navigation: false,
-          pagination: false,
-          slideSpeed: 300,
-          paginationSpeed: 400,
-          autoPlay: 5000,
-          navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
-      });
-
-      // $('.twitterNews').owlCarousel({
-      //     items: 1,
-      //     loop: true,
-      //     margin: 0,
-      //     autoplay: true,
-      //     animateOut: 'fadeOutLeft-custom50',
-      //     animateIn: 'fadeInRight',
-      //     stagePadding: 0,
-      //     smartSpeed: 450,
-      //     autoplayTimeout: 9000,
-      //     autoplayHoverPause: false
-      // });
-  }
-
-*/
 })
