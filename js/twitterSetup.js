@@ -21,18 +21,23 @@ $(document).ready(function () {
   $('.twitter-logo').remove()
 
   // new verion!!! widget id is deprecated
-  var config = {
-    profile: { screenName: 'josh_mu_' },
-    domId: 'twitterNews',
-    maxTweets: 5,
-    enableLinks: true,
-    showUser: false,
-    showTime: true,
-    showImages: false,
-    showInteraction: false,
-    customCallback: handleTweets,
-    lang: 'en',
-  }
+  // var config = {
+  //   profile: { screenName: 'josh_mu_' },
+  //   domId: 'twitterNews',
+  //   maxTweets: 5,
+  //   enableLinks: true,
+  //   showUser: false,
+  //   showTime: true,
+  //   showImages: false,
+  //   showInteraction: false,
+  //   customCallback: handleTweets,
+  //   lang: 'en',
+  // }
+
+  // USING MY CUSTOM API
+  fetch('https://mu-twitter-timeline-api.herokuapp.com/')
+    .then((response) => response.json())
+    .then((data) => handleTweets(data))
 
   function handleTweets(tweets) {
     console.log('tweet tweet')
