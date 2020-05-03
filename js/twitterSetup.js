@@ -10,7 +10,9 @@ $(document).ready(function () {
 
   function tweetHtml(tweet) {
     return `<div>
-              <p>${tweet.full_text}</p>
+            <a href="https://twitter.com/josh_mu_/status/${tweet.id_str}" target="_blank">
+              <p class="twitter-text">${tweet.full_text}</p>
+              </a>
             </div>`
   }
 
