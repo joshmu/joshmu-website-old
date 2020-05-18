@@ -1,25 +1,43 @@
 {
   "name": "joshmu.com",
-  "version": "1.0.0",
-  "description": "joshmu.com official website",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "description": "Official website of Josh Mu",
+  "version": "1.1.0",
+  "author": "Josh Mu <mu@joshmu.com>",
+  "dependencies": {
+    "gatsby": "^2.21.22",
+    "gatsby-image": "^2.4.3",
+    "gatsby-plugin-manifest": "^2.4.2",
+    "gatsby-plugin-offline": "^3.2.1",
+    "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-sharp": "^2.6.2",
+    "gatsby-source-filesystem": "^2.3.1",
+    "gatsby-transformer-sharp": "^2.5.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joshmu/joshmu.com-2019.git"
+  "devDependencies": {
+    "prettier": "2.0.5"
   },
   "keywords": [
-    "josh",
-    "mu",
-    "website"
+    "gatsby"
   ],
-  "author": "josh mu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joshmu/joshmu.com-2019/issues"
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "homepage": "https://github.com/joshmu/joshmu.com-2019#readme",
-  "dependencies": {}
+  "repository": {
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
 }
