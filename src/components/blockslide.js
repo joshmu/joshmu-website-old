@@ -3,16 +3,21 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import gsap from "gsap"
 
-import { getCssVar } from "../hooks/useHelpers"
+// import { getCssVar } from "../hooks/useHelpers"
 
-const BlockSlide = ({ children, bgColor, blockColor }) => {
+const BlockSlide = ({ children, bgColor, blockColor, ...delegated }) => {
   const tl = gsap.timeline()
   useEffect(() => {
     animate(tl)
   }, [tl])
 
   return (
-    <Wrapper data-gsap="init" bgColor={bgColor} blockColor={blockColor}>
+    <Wrapper
+      data-gsap="init"
+      bgColor={bgColor}
+      blockColor={blockColor}
+      {...delegated}
+    >
       <div className="overlay first" data-gsap="1"></div>
       <div className="overlay second" data-gsap="2"></div>
       <div className="content" data-gsap="3">
@@ -79,14 +84,14 @@ const animate = tl => {
     })
     .to('[data-gsap="2"]', {
       scale: 0.1,
-      duration: 1,
+      duration: 0.8,
       ease: "Power3.easeOut",
       delay: -0.6,
     })
     .to('[data-gsap="2"]', {
       scale: 0,
       rotate: "360deg",
-      duration: 1,
+      duration: 0.8,
       ease: "Power3.easeOut",
       delay: -0.6,
     })
@@ -104,7 +109,7 @@ const animate = tl => {
       },
       duration: 0.4,
       ease: "Power3.easeOut",
-      // delay: -0.4,
+      delay: -0.4,
     })
   // .to("body", {
   //   backgroundColor: getCssVar("--secondary-bg-color"),
