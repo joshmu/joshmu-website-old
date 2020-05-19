@@ -3,6 +3,8 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import gsap from "gsap"
 
+import { getCssVar } from "../hooks/useHelpers"
+
 const BlockSlide = ({ children, bgColor, blockColor }) => {
   const tl = gsap.timeline()
   useEffect(() => {
@@ -29,6 +31,7 @@ const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   .overlay {
+    pointer-events: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -90,12 +93,26 @@ const animate = tl => {
     .to("body", {
       css: {
         "--main-bg-color": "black",
-        "--main-font-color": "whitesmoke",
       },
-      duration: 0.6,
-      ease: "Power3.easeOut",
+      duration: 0.8,
+      ease: "Power3.easeInOut",
       delay: -0.6,
     })
+    .to("body", {
+      css: {
+        "--main-font-color": "whitesmoke",
+      },
+      duration: 0.4,
+      ease: "Power3.easeOut",
+      // delay: -0.4,
+    })
+  // .to("body", {
+  //   backgroundColor: getCssVar("--secondary-bg-color"),
+  //   color: getCssVar("--secondary-font-color"),
+  //   duration: 0.6,
+  //   ease: "Power3.easeOut",
+  //   delay: -0.6,
+  // })
 }
 
 export default BlockSlide
