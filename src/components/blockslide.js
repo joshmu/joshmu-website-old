@@ -3,14 +3,14 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import gsap from "gsap"
 
-const BlockSlide = ({ children, bg, blockColor = "black" }) => {
+const BlockSlide = ({ children, bgColor, blockColor }) => {
   const tl = gsap.timeline()
   useEffect(() => {
     animate(tl)
   }, [tl])
 
   return (
-    <Wrapper data-gsap="init" bg={bg} blockColor={blockColor}>
+    <Wrapper data-gsap="init" bgColor={bgColor} blockColor={blockColor}>
       <div className="overlay first" data-gsap="1"></div>
       <div className="overlay second" data-gsap="2"></div>
       <div className="content" data-gsap="3">
@@ -21,6 +21,10 @@ const BlockSlide = ({ children, bg, blockColor = "black" }) => {
 }
 
 const Wrapper = styled.div`
+  --bg-color: ${props => props.bgColor || "var(--main-bg-color)"};
+  --blockColor: ${props => props.blockColor || "black"};
+
+  padding: 1em 2em; /* so our block cursor is not overlapping content*/
   visibility: hidden;
   position: relative;
   overflow: hidden;
@@ -34,13 +38,12 @@ const Wrapper = styled.div`
     z-index: 1;
     &.first {
       width: 100%;
-      background-color: ${({ bg }) => (bg ? bg : "black")};
+      background-color: var(--bg-color);
       z-index: 3;
     }
     &.second {
-      width: 10%;
-      background-color: ${({ blockColor }) =>
-        blockColor ? blockColor : "black"};
+      width: 1.25em;
+      background-color: var(--blockColor);
       left: 150%;
       z-index: 1;
     }
@@ -48,7 +51,7 @@ const Wrapper = styled.div`
   .content {
     position: relative;
     z-index: 2;
-    color: white;
+    color: var(--bg-color);
     mix-blend-mode: difference;
   }
 `
@@ -81,6 +84,15 @@ const animate = tl => {
       scale: 0,
       rotate: "360deg",
       duration: 1,
+      ease: "Power3.easeOut",
+      delay: -0.6,
+    })
+    .to("body", {
+      css: {
+        "--main-bg-color": "black",
+        "--main-font-color": "whitesmoke",
+      },
+      duration: 0.6,
       ease: "Power3.easeOut",
       delay: -0.6,
     })

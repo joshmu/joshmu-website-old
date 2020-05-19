@@ -6,22 +6,26 @@ import styled from "styled-components"
 import BlockSlide from "../components/blockslide"
 
 const IndexPage = () => (
-  <App>
-    {/* <Reveal> Hello </Reveal> */}
-    <BlockSlide bg="papayawhip">
-      {" "}
-      <h4 style={{ margin: 0, padding: "1em" }}>joshmu.com</h4>
-    </BlockSlide>
-  </App>
+  <>
+    <App>
+      {/* <Reveal> Hello </Reveal> */}
+      <BlockSlide>
+        <h1>joshmu.com</h1>
+      </BlockSlide>
+    </App>
+  </>
 )
 
 const App = styled.div`
-  background: papayawhip;
+  background: var(--main-bg-color);
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  h1 {
+    font-weight: 300;
+  }
 `
 
 export default IndexPage
