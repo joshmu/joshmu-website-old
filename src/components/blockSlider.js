@@ -5,7 +5,7 @@ import gsap from "gsap"
 
 // import { getCssVar } from "../hooks/useHelpers"
 
-const BlockSlide = ({ children, bgColor, blockColor, ...delegated }) => {
+const BlockSlider = ({ children, bgColor, blockColor, ...delegated }) => {
   const tl = gsap.timeline()
   useEffect(() => {
     // animate
@@ -138,4 +138,4 @@ const animate = tl => {
 const getCssVar = cssVar =>
   getComputedStyle(document.documentElement).getPropertyValue(cssVar)
 
-export default BlockSlide
+export default BlockSlider

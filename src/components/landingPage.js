@@ -1,13 +1,13 @@
 import React from "react"
 
 import styled from "styled-components"
-import BlockSlide from "./blockSlide"
+import BlockSlider from "./blockSlider"
 
 const LandingPage = () => {
   return (
     <Wrapper>
       <div className="inner-wrapper">
-        <BlockSlide>
+        <BlockSlider>
           <div className="logo">
             <a href="/" target="_blank" rel="noopener noreferrer">
               <h1>
@@ -17,7 +17,7 @@ const LandingPage = () => {
               </h1>
             </a>
           </div>
-        </BlockSlide>
+        </BlockSlider>
         <div className="instructions">
           <p>Who would you like to meet</p>
         </div>
