@@ -102,9 +102,11 @@ const animate = tl => {
       ease: "Power3.easeOut",
       delay: -0.6,
     })
-    .to(".inner-wrapper", {
+    // target 'body' due to landscape mode on iphone containing body background-color as --main-bg-color
+    .to([".inner-wrapper", "body"], {
       css: {
         "--landing-bg-color": getCssVar("--main-font-color"),
+        backgroundColor: getCssVar("--main-font-color"),
       },
       duration: 0.8,
       ease: "Power3.easeInOut",
