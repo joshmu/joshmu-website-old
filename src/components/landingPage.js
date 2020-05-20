@@ -153,6 +153,7 @@ const Wrapper = styled.div`
         margin: 0 1em;
         position: relative;
         font-size: 1.8rem;
+        margin-left: 1.2em;
         ${mediaNoHover(`margin-left: 1.4em;`)}
         a {
           font-family: var(--coder-font-family);
