@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import BlockSlider from "./blockSlider"
 
 import gsap from "gsap"
@@ -53,11 +53,19 @@ const LandingPage = () => {
   )
 }
 
+const mediaNoHover = styles => css`
+  /* smartphones, touchscreens */
+  @media (hover: none) {
+    ${styles}
+  }
+`
+
 const Wrapper = styled.div`
   --landing-bg-color: var(--main-bg-color);
   /* hide the font initially in the background-color */
   --landing-font-color: var(--main-bg-color);
 
+  /* hide gsap animation flash */
   visibility: hidden;
 
   /* using inner-wrapper so we can set css variables again at later point */
@@ -81,13 +89,12 @@ const Wrapper = styled.div`
     .logo {
       letter-spacing: 0.4rem;
       text-transform: uppercase;
-        .logo-text {
-          font-weight: 300;
-          font-size: 4rem;
-          text-align: center;
-          @media (max-width: 475px) {
-            font-size: 3rem;
-          }
+      .logo-text {
+        font-weight: 300;
+        font-size: 4rem;
+        text-align: center;
+        @media (max-width: 475px) {
+          font-size: 3rem;
         }
       }
     }
@@ -95,6 +102,7 @@ const Wrapper = styled.div`
       font-family: var(--main-font-family);
       opacity: 0.7;
       margin-bottom: 1rem;
+      margin-right: 0.5rem;
       p {
         position: relative;
         &:after {
@@ -127,8 +135,9 @@ const Wrapper = styled.div`
             position: absolute;
             font-size: 1.25em;
             bottom: 0;
+            right: -0.15em;
             opacity: 0;
-            /* right: -0.25em; */
+            ${mediaNoHover(`opacity: 1;`)}
           }
         }
         &:hover {
@@ -143,7 +152,8 @@ const Wrapper = styled.div`
       .coder {
         margin: 0 1em;
         position: relative;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        ${mediaNoHover(`margin-left: 1.4em;`)}
         a {
           font-family: var(--coder-font-family);
           font-weight: 300;
@@ -158,6 +168,7 @@ const Wrapper = styled.div`
             position: absolute;
             top: -0.1em;
             left: -0.5em;
+            ${mediaNoHover(`opacity: 1;`)}
           }
         }
         &:hover {
