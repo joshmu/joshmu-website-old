@@ -105,7 +105,7 @@ const animate = tl => {
     })
     .to(".inner-wrapper", {
       css: {
-        "--landing-bg-color": "black",
+        "--landing-bg-color": getCssVar("--main-font-color"),
       },
       duration: 0.8,
       ease: "Power3.easeInOut",
@@ -113,7 +113,7 @@ const animate = tl => {
     })
     .to(".inner-wrapper", {
       css: {
-        "--landing-font-color": "whitesmoke",
+        "--landing-font-color": getCssVar("--main-bg-color"),
       },
       duration: 0.4,
       ease: "Power3.easeOut",
@@ -134,5 +134,8 @@ const animate = tl => {
   //   delay: -0.6,
   // })
 }
+
+const getCssVar = cssVar =>
+  getComputedStyle(document.documentElement).getPropertyValue(cssVar)
 
 export default BlockSlide

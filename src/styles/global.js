@@ -3,10 +3,10 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle`
   :root {
   --main-bg-color: whitesmoke;
-  --secondary-bg-color: black;
+  --main-font-color: black;
 
-  --main-font-color: whitesmoke;
-  --secondary-font-color: black;
+  --secondary-bg-color: black;
+  --secondary-font-color: whitesmoke;
 
   --main-font-family: Montserrat, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --artist-font-family: 'Reenie Beanie', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

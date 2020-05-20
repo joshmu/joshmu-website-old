@@ -46,8 +46,10 @@ const LandingPage = () => {
 
 const Wrapper = styled.div`
   --landing-bg-color: var(--main-bg-color);
-  --landing-font-color: var(--main-font-color);
+  /* hide the font initially in the background-color */
+  --landing-font-color: var(--main-bg-color);
 
+  /* using inner-wrapper so we can set css variables again at later point */
   .inner-wrapper {
     background-color: var(--landing-bg-color);
     color: var(--landing-font-color);
@@ -140,7 +142,7 @@ const Wrapper = styled.div`
       .split {
         display: inline-block;
         width: 0.1em;
-        height: 3.5em;
+        height: 3em;
         background-color: var(--landing-font-color);
         /* font-weight: 100;
         font-size: 4rem;
