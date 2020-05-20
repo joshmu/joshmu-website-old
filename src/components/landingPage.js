@@ -27,27 +27,29 @@ const LandingPage = () => {
         <div className="instructions">
           <p>Who would you like to meet</p>
         </div>
-        <h2 className="artistOrCoder">
-          <span className="artist">
-            <a
-              href="https://joshmu.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Artist
-            </a>
-          </span>
-          <div className="split"></div>
-          <span className="coder">
-            <a
-              href="https://github.com/joshmu"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Coder
-            </a>
-          </span>
-        </h2>
+        <div className="artistOrCoder">
+          <h2>
+            <span className="artist">
+              <a
+                href="https://joshmu.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Artist
+              </a>
+            </span>
+            <div className="split"></div>
+            <span className="coder">
+              <a
+                href="https://github.com/joshmu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Coder
+              </a>
+            </span>
+          </h2>
+        </div>
       </div>
     </Wrapper>
   )
@@ -117,75 +119,79 @@ const Wrapper = styled.div`
       }
     }
     .artistOrCoder {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .artist {
-        margin: 0 1em;
-        position: relative;
-        font-size: 2.5rem;
-        a {
-          font-family: var(--artist-font-family);
-          text-transform: capitalize;
-          text-decoration: none;
-          transition: color 0.4s ease-in-out;
-          &:after {
-            content: ".";
-            transition: opacity 0.4s ease-in-out;
-            position: absolute;
-            font-size: 1.25em;
-            bottom: 0;
-            right: -0.15em;
-            opacity: 0;
-            ${mediaNoHover(`opacity: 1;`)}
-          }
-        }
-        &:hover {
+      margin-top: 1em;
+      h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .artist {
+          margin-right: 1em;
+          position: relative;
+          font-size: 2.5rem;
           a {
-            color: var(--artist-font-color);
+            font-family: var(--artist-font-family);
+            text-transform: capitalize;
+            text-decoration: none;
+            transition: color 0.4s ease-in-out;
             &:after {
-              opacity: 1;
+              content: ".";
+              transition: opacity 0.4s ease-in-out;
+              position: absolute;
+              font-size: 1.25em;
+              bottom: 0;
+              right: -0.15em;
+              opacity: 0;
+              ${mediaNoHover(`opacity: 1;`)}
+            }
+          }
+          &:hover {
+            a {
+              color: var(--artist-font-color);
+              &:after {
+                opacity: 1;
+              }
             }
           }
         }
-      }
-      .coder {
-        margin: 0 1em;
-        position: relative;
-        font-size: 1.8rem;
-        margin-left: 1.2em;
-        ${mediaNoHover(`margin-left: 1.4em;`)}
-        a {
-          font-family: var(--coder-font-family);
-          font-weight: 300;
-          letter-spacing: -2px;
-          text-transform: lowercase;
-          text-decoration: none;
-          transition: color 0.4s ease-in-out;
-          &:before {
-            content: "#";
-            transition: opacity 0.4s ease-in-out;
-            opacity: 0;
-            position: absolute;
-            top: -0.1em;
-            left: -0.5em;
-            ${mediaNoHover(`opacity: 1;`)}
-          }
-        }
-        &:hover {
+        .coder {
+          margin-left: 1em;
+          position: relative;
+          font-size: 1.8rem;
+          margin-left: 1.2em;
+          ${mediaNoHover(`margin-left: 1.4em;`)}
           a {
-            color: var(--coder-font-color);
+            font-family: var(--coder-font-family);
+            font-weight: 300;
+            letter-spacing: -2px;
+            text-transform: lowercase;
+            text-decoration: none;
+            transition: color 0.4s ease-in-out;
             &:before {
-              opacity: 1;
+              content: "#";
+              transition: opacity 0.4s ease-in-out;
+              opacity: 0;
+              position: absolute;
+              top: -0.1em;
+              left: -0.5em;
+              ${mediaNoHover(`opacity: 1;`)}
+            }
+          }
+          &:hover {
+            a {
+              color: var(--coder-font-color);
+              &:before {
+                opacity: 1;
+              }
             }
           }
         }
-      }
-      .split {
-        display: inline-block;
-        width: 0.05em;
-        height: 3em;
-        background-color: var(--landing-font-color);
+        .split {
+          display: inline-block;
+          opacity: 0.7;
+          width: 2px;
+          height: 3em;
+          background-color: var(--landing-font-color);
+        }
       }
     }
   }
