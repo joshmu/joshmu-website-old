@@ -103,21 +103,28 @@ const animate = tl => {
       ease: "Power3.easeOut",
       delay: -0.6,
     })
-    .to("body", {
+    .to(".inner-wrapper", {
       css: {
-        "--main-bg-color": "black",
+        "--landing-bg-color": "black",
       },
       duration: 0.8,
       ease: "Power3.easeInOut",
       delay: -0.6,
     })
-    .to("body", {
+    .to(".inner-wrapper", {
       css: {
-        "--main-font-color": "whitesmoke",
+        "--landing-font-color": "whitesmoke",
       },
       duration: 0.4,
       ease: "Power3.easeOut",
       delay: -0.4,
+    })
+    .from(".split", {
+      rotate: 720,
+      scale: 0,
+      duration: 1,
+      ease: "Power3.easeInOut",
+      delay: -0.6,
     })
   // .to("body", {
   //   backgroundColor: getCssVar("--secondary-bg-color"),
