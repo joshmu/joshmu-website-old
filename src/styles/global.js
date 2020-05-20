@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     /* color: var(--main-font-color); */
   }
   html, body {
-
+    visibility: hidden;
   }
 `
 

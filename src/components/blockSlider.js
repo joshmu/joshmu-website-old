@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   --blockColor: ${props => props.blockColor || "black"};
 
   padding: 1em 2em; /* so our block cursor is not overlapping content*/
-  visibility: hidden;
   position: relative;
   overflow: hidden;
   .overlay {
@@ -67,16 +66,16 @@ const Wrapper = styled.div`
 
 const animate = tl => {
   // remove flash initially
-  tl.to('[data-gsap="init"]', {
+  tl.to("body", {
     duration: 0,
     css: { visibility: "visible" },
   })
-    .to('[data-gsap="1"]', {
-      left: "100%",
-      duration: 1.6,
-      ease: "Power3.easeOut",
-      delay: 0.1,
-    })
+  tl.to('[data-gsap="1"]', {
+    left: "100%",
+    duration: 1.6,
+    ease: "Power3.easeOut",
+    delay: 0.1,
+  })
     // CUSTOM -> REMOVE THIS FOR STANDALONE COMPONENT
     .from('[data-gsap="3"] span', {
       opacity: 0.25,
