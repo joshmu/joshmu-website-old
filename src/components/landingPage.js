@@ -8,7 +8,8 @@ import gsap from "gsap"
 const LandingPage = () => {
   useEffect(() => {
     // remove flash
-    gsap.to("[data-gsap='visibility']", { autoAlpha: 1 })
+    // todo: call gsap once fonts have successfully loaded
+    gsap.to("[data-gsap='visibility']", { autoAlpha: 1, delay: 1 })
   }, [])
 
   return (
