@@ -13,7 +13,8 @@ const GlobalStyle = createGlobalStyle`
   --coder-font-family: 'Fira Code', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   --artist-font-color: #F1B05A;
-  --coder-font-color: #6196B8;
+  /* --coder-font-color: #6196B8; */
+  --coder-font-color: #7CC46E;
 
   }
 

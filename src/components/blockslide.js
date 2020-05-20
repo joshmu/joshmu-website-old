@@ -51,7 +51,7 @@ const Wrapper = styled.div`
       z-index: 3;
     }
     &.second {
-      width: 1.25em;
+      width: 1em;
       background-color: var(--blockColor);
       left: 150%;
       z-index: 1;

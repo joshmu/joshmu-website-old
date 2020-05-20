@@ -18,7 +18,10 @@ const LandingPage = () => {
             </a>
           </div>
         </BlockSlide>
-        <h2 className="description">
+        <div className="instructions">
+          <p>Who would you like to meet</p>
+        </div>
+        <h2 className="artistOrCoder">
           <span className="artist">
             <a
               href="https://joshmu.com"
@@ -78,7 +81,24 @@ const Wrapper = styled.div`
         }
       }
     }
-    .description {
+    .instructions {
+      font-family: var(--main-font-family);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+      p {
+        position: relative;
+        &:after {
+          content: "?";
+          font-size: 2em;
+          display: inline-block;
+          position: absolute;
+          top: -0.35em;
+          right: -0.6em;
+          transform: rotate(15deg);
+        }
+      }
+    }
+    .artistOrCoder {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -117,7 +137,7 @@ const Wrapper = styled.div`
         a {
           font-family: var(--coder-font-family);
           font-weight: 300;
-          letter-spacing: -1.75px;
+          letter-spacing: -2px;
           text-transform: lowercase;
           text-decoration: none;
           transition: color 0.4s ease-in-out;
