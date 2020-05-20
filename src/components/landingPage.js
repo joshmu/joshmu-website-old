@@ -8,7 +8,7 @@ import gsap from "gsap"
 const LandingPage = () => {
   useEffect(() => {
     // remove flash
-    gsap.to("body", 0, { css: { visibility: "visible" } })
+    gsap.to("body", 0, { css: { visibility: "visible" }, delay: 0.8 })
   }, [])
 
   return (

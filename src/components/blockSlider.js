@@ -74,7 +74,7 @@ const animate = tl => {
     left: "100%",
     duration: 1.6,
     ease: "Power3.easeOut",
-    delay: 0.1,
+    delay: 1,
   })
     // CUSTOM -> REMOVE THIS FOR STANDALONE COMPONENT
     .from('[data-gsap="3"] span', {

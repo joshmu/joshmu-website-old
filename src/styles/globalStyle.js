@@ -18,19 +18,26 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
-  * {
+  *, *:before, *:after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* font-family: var(--main-font-family); */
-    /* color: var(--main-font-color); */
   }
-  html, body {
-    /* remove animation flash */
-    /* visibility: hidden; */
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    color: var(--main-font-color);
+    font-family: var(--main-font-family);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background-color: var(--main-bg-color);
+
+    /* remove animation flash */
+    visibility: hidden;
   }
 `
 
