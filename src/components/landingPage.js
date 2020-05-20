@@ -8,11 +8,11 @@ import gsap from "gsap"
 const LandingPage = () => {
   useEffect(() => {
     // remove flash
-    gsap.to("body", 0, { css: { visibility: "visible" }, delay: 0.8 })
+    gsap.to("[data-gsap='visibility']", { autoAlpha: 1 })
   }, [])
 
   return (
-    <Wrapper>
+    <Wrapper data-gsap="visibility">
       <div className="inner-wrapper">
         <BlockSlider>
           <div className="logo">
@@ -58,6 +58,8 @@ const Wrapper = styled.div`
   --landing-bg-color: var(--main-bg-color);
   /* hide the font initially in the background-color */
   --landing-font-color: var(--main-bg-color);
+
+  visibility: hidden;
 
   /* using inner-wrapper so we can set css variables again at later point */
   .inner-wrapper {
@@ -172,12 +174,9 @@ const Wrapper = styled.div`
       }
       .split {
         display: inline-block;
-        width: 0.1em;
+        width: 0.05em;
         height: 3em;
         background-color: var(--landing-font-color);
-        /* font-weight: 100;
-        font-size: 4rem;
-        position: relative; */
       }
     }
   }

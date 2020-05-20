@@ -35,9 +35,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: var(--main-bg-color);
-
-    /* remove animation flash */
-    visibility: hidden;
   }
 `
 
