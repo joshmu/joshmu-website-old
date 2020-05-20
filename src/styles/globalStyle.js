@@ -26,7 +26,11 @@ const GlobalStyle = createGlobalStyle`
     /* color: var(--main-font-color); */
   }
   html, body {
-    visibility: hidden; /* remove animation flash */
+    /* remove animation flash */
+    /* visibility: hidden; */
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 `
 
