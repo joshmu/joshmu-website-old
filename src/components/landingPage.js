@@ -17,13 +17,11 @@ const LandingPage = () => {
       <div className="inner-wrapper">
         <BlockSlider>
           <div className="logo">
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <h1>
-                {"JOSH MU".split("").map((t, idx) => (
-                  <span key={idx}>{t}</span>
-                ))}
-              </h1>
-            </a>
+            <h1 className="logo-text">
+              {"JOSH MU".split("").map((t, idx) => (
+                <span key={idx}>{t}</span>
+              ))}
+            </h1>
           </div>
         </BlockSlider>
         <div className="instructions">
@@ -83,9 +81,7 @@ const Wrapper = styled.div`
     .logo {
       letter-spacing: 0.4rem;
       text-transform: uppercase;
-      a {
-        text-decoration: none;
-        h1 {
+        .logo-text {
           font-weight: 300;
           font-size: 4rem;
           text-align: center;
