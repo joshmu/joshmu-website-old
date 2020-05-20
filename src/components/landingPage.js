@@ -70,17 +70,24 @@ const Wrapper = styled.div`
   /* hide gsap animation flash */
   visibility: hidden;
 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   /* using inner-wrapper so we can set css variables again at later point */
   .inner-wrapper {
     background-color: var(--landing-bg-color);
     color: var(--landing-font-color);
 
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* add slight lift to bring up the content */
+    margin-bottom: 2em;
 
     /* color all links */
     a {
@@ -91,6 +98,9 @@ const Wrapper = styled.div`
     .logo {
       letter-spacing: 0.4rem;
       text-transform: uppercase;
+
+      /* add slight shift since text letters are not centered within their respective span elements */
+      margin-left: 1em;
       .logo-text {
         font-weight: 300;
         font-size: 4rem;
