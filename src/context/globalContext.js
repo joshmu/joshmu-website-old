@@ -4,10 +4,10 @@ const defaultState = {}
 const GlobalContext = createContext(defaultState)
 
 const GlobalProvider = ({ children }) => {
-  const [flag, setFlag] = useState(false)
+  const [flag, setFlag] = useState("init")
 
-  const toggle = () => {
-    setFlag(!flag)
+  const toggle = val => {
+    setFlag(val)
   }
 
   return (

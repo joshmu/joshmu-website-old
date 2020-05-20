@@ -117,7 +117,7 @@ const Wrapper = styled.div`
         a {
           font-family: var(--coder-font-family);
           font-weight: 300;
-          letter-spacing: -0.85px;
+          letter-spacing: -1.75px;
           text-transform: lowercase;
           text-decoration: none;
           transition: color 0.4s ease-in-out;
