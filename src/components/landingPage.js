@@ -25,7 +25,7 @@ const LandingPage = () => {
           </div>
         </BlockSlider>
         <div className="instructions">
-          <p>Who would you like to meet</p>
+          <p>Who would you like to meet?</p>
         </div>
         <div className="artistOrCoder">
           <h2>
@@ -104,18 +104,6 @@ const Wrapper = styled.div`
       font-family: var(--main-font-family);
       opacity: 0.7;
       margin-bottom: 1rem;
-      margin-right: 0.5rem;
-      p {
-        position: relative;
-        &:after {
-          content: "?";
-          font-size: 2em;
-          display: inline-block;
-          position: absolute;
-          top: -0.35em;
-          right: -0.6em;
-          transform: rotate(15deg);
-        }
       }
     }
     .artistOrCoder {
