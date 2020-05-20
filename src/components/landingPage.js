@@ -78,6 +78,10 @@ const Wrapper = styled.div`
         h1 {
           font-weight: 300;
           font-size: 4rem;
+          text-align: center;
+          @media (max-width: 475px) {
+            font-size: 3rem;
+          }
         }
       }
     }
