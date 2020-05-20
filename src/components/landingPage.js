@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import styled from "styled-components"
 import BlockSlider from "./blockSlider"
 
+import gsap from "gsap"
+
 const LandingPage = () => {
+  useEffect(() => {
+    // remove flash
+    gsap.to("body", 0, { css: { visibility: "visible" } })
+  }, [])
+
   return (
     <Wrapper>
       <div className="inner-wrapper">

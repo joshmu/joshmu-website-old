@@ -66,10 +66,10 @@ const Wrapper = styled.div`
 
 const animate = tl => {
   // remove flash initially
-  tl.to("body", {
-    duration: 0,
-    css: { visibility: "visible" },
-  })
+  // tl.to("body", {
+  //   duration: 0,
+  //   css: { visibility: "visible" },
+  // })
   tl.to('[data-gsap="1"]', {
     left: "100%",
     duration: 1.6,
