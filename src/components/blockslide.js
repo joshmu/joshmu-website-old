@@ -8,6 +8,7 @@ import gsap from "gsap"
 const BlockSlide = ({ children, bgColor, blockColor, ...delegated }) => {
   const tl = gsap.timeline()
   useEffect(() => {
+    // animate
     animate(tl)
   }, [tl])
 
@@ -74,7 +75,14 @@ const animate = tl => {
       left: "100%",
       duration: 1.6,
       ease: "Power3.easeOut",
-      delay: 0.6,
+      delay: 0.1,
+    })
+    // CUSTOM -> REMOVE THIS FOR STANDALONE COMPONENT
+    .from('[data-gsap="3"] span', {
+      opacity: 0.25,
+      duration: 1.2,
+      stagger: 0.1,
+      delay: -1.6,
     })
     .to('[data-gsap="2"]', {
       left: 0,
