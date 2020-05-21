@@ -29,18 +29,18 @@ export const GlobalStyle = createGlobalStyle`
 
   /* CSS VARIABLES BUT WE CAN USE STYLE COMPONENTS THEME INSTEAD */
   :root {
-  --main-bg-color: white;
-  --secondary-bg-color: black;
+  --main-bg-color: ${props => props.theme.bg.main};
+  --secondary-bg-color: ${props => props.theme.bg.secondary};
 
-  --main-font-color: black;
-  --secondary-font-color: white;
+  --main-font-color: ${props => props.theme.font.color.main};
+  --secondary-font-color: ${props => props.theme.font.color.secondary};
 
-  --main-font-family: Montserrat, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --artist-font-family: 'Reenie Beanie', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --coder-font-family: 'Fira Code', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --main-font-family: ${props => props.theme.font.family.main};
+  --artist-font-family: ${props => props.theme.font.family.artist};
+  --coder-font-family: ${props => props.theme.font.family.coder};
 
-  --artist-font-color: #F1B05A;
-  --coder-font-color: #7CC46E;
+  --artist-font-color: ${props => props.theme.font.color.artist};
+  --coder-font-color: ${props => props.theme.font.color.coder};
   }
 
   *, *:before, *:after {
