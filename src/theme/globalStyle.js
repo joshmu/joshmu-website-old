@@ -1,14 +1,38 @@
 import { createGlobalStyle } from "styled-components"
 import reset from "styled-reset"
 
-const GlobalStyle = createGlobalStyle`
+export const theme = {
+  bg: {
+    main: "white",
+    secondary: "black",
+  },
+  font: {
+    family: {
+      main:
+        "Montserrat, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      artist:
+        "'Reenie Beanie', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      coder:
+        "'Fira Code', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;",
+    },
+    color: {
+      main: "black",
+      secondary: "white",
+      artist: "#F1B05A",
+      coder: "#7CC46E",
+    },
+  },
+}
+
+export const GlobalStyle = createGlobalStyle`
   ${reset}
 
+  /* CSS VARIABLES BUT WE CAN USE STYLE COMPONENTS THEME INSTEAD */
   :root {
   --main-bg-color: white;
-  --main-font-color: black;
-
   --secondary-bg-color: black;
+
+  --main-font-color: black;
   --secondary-font-color: white;
 
   --main-font-family: Montserrat, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
