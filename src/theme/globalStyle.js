@@ -1,21 +1,22 @@
 import { createGlobalStyle } from "styled-components"
+import reset from "styled-reset"
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
+
   :root {
-  --main-bg-color: whitesmoke;
+  --main-bg-color: white;
   --main-font-color: black;
 
   --secondary-bg-color: black;
-  --secondary-font-color: whitesmoke;
+  --secondary-font-color: white;
 
   --main-font-family: Montserrat, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --artist-font-family: 'Reenie Beanie', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --coder-font-family: 'Fira Code', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   --artist-font-color: #F1B05A;
-  /* --coder-font-color: #6196B8; */
   --coder-font-color: #7CC46E;
-
   }
 
   *, *:before, *:after {
@@ -36,6 +37,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: var(--main-bg-color);
   }
+
+
 `
 
 export default GlobalStyle
