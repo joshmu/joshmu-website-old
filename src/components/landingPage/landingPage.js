@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 
-import styled, { css } from "styled-components"
+import styled from "styled-components"
+import { H1, P } from "../pageElements"
+import { mediaNoHover } from "../../theme/styleHelpers"
 import BlockSlider from "./blockSlider"
 
 import gsap from "gsap"
@@ -17,15 +19,15 @@ const LandingPage = () => {
       <div className="inner-wrapper">
         <BlockSlider>
           <div className="logo">
-            <h1 className="logo-text">
+            <H1 className="logo-text">
               {"JOSH MU".split("").map((t, idx) => (
                 <span key={idx}>{t}</span>
               ))}
-            </h1>
+            </H1>
           </div>
         </BlockSlider>
         <div className="instructions">
-          <p>Who would you like to meet?</p>
+          <P>Who would you like to meet?</P>
         </div>
         <div className="artistOrCoder">
           <h2>
@@ -55,17 +57,10 @@ const LandingPage = () => {
   )
 }
 
-const mediaNoHover = styles => css`
-  /* smartphones, touchscreens */
-  @media (hover: none) {
-    ${styles}
-  }
-`
-
 const Wrapper = styled.div`
-  --landing-bg-color: var(--main-bg-color);
+  --landing-bg-color: ${({ theme }) => theme.backgroundColor.main};
   /* hide the font initially in the background-color */
-  --landing-font-color: var(--main-bg-color);
+  --landing-font-color: ${({ theme }) => theme.backgroundColor.main};
 
   /* hide gsap animation flash */
   visibility: hidden;
@@ -87,87 +82,89 @@ const Wrapper = styled.div`
     align-items: center;
 
     /* add slight lift to bring up the content */
-    margin-bottom: 2em;
+    margin-bottom: ${({ theme }) => theme.spacing[12]};
 
     /* color all links */
     a {
+      /* this is specific to the landing page and is manipulated by gsap */
       color: var(--landing-font-color);
-      font-family: var(--main-font-family);
     }
 
     .logo {
-      letter-spacing: 0.4rem;
-      text-transform: uppercase;
-
       /* add slight shift since text letters are not centered within their respective span elements */
       margin-left: 1em;
+      cursor: default;
       .logo-text {
-        font-weight: 300;
-        font-size: 4rem;
+        font-weight: ${({ theme }) => theme.fontWeight.light};
         text-align: center;
+        /* font-weight: 300; */
+        letter-spacing: ${({ theme }) => theme.letterSpacing.widest};
+        text-transform: uppercase;
+        line-height: ${({ theme }) => theme.lineHeight.none};
+        margin-top: ${({ theme }) => theme.spacing[0]};
         @media (max-width: 475px) {
-          font-size: 3rem;
+          font-size: ${({ theme }) => theme.fontSize["4xl"]};
         }
       }
     }
     .instructions {
       font-family: var(--main-font-family);
-      opacity: 0.7;
-      margin-bottom: 1rem;
-      }
+      opacity: ${({ theme }) => theme.opacity[50]};
+      margin-bottom: ${({ theme }) => theme.spacing[4]};
+      cursor: default;
     }
     .artistOrCoder {
-      margin-top: 1em;
+      margin-top: ${({ theme }) => theme.spacing[4]};
       h2 {
         display: flex;
         justify-content: center;
         align-items: center;
         .artist {
-          margin-right: 1em;
+          margin-right: ${({ theme }) => theme.spacing[8]};
           position: relative;
-          font-size: 2.5rem;
+          font-size: ${({ theme }) => theme.fontSize["4xl"]};
           a {
-            font-family: var(--artist-font-family);
+            font-family: ${({ theme }) => theme.fontFamily.artist};
             text-transform: capitalize;
             text-decoration: none;
             transition: color 0.4s ease-in-out;
             &:after {
+              /* using 'em' here to be relative to text */
               content: ".";
               transition: opacity 0.4s ease-in-out;
               position: absolute;
               font-size: 1.25em;
               bottom: 0;
               right: -0.15em;
-              opacity: 0;
+              opacity: ${({ theme }) => theme.opacity[0]};
               ${mediaNoHover(`opacity: 1;`)}
             }
           }
           &:hover {
             a {
-              color: var(--artist-font-color);
+              color: ${({ theme }) => theme.fontColor.artist};
               &:after {
-                opacity: 1;
+                opacity: ${({ theme }) => theme.opacity[100]};
               }
             }
           }
         }
         .coder {
-          margin-left: 1em;
           position: relative;
-          font-size: 1.8rem;
-          margin-left: 1.2em;
+          font-size: ${({ theme }) => theme.fontSize["2xl"]};
+          margin-left: ${({ theme }) => theme.spacing[8]};
           ${mediaNoHover(`margin-left: 1.4em;`)}
           a {
-            font-family: var(--coder-font-family);
-            font-weight: 300;
-            letter-spacing: -2px;
+            font-family: ${({ theme }) => theme.fontFamily.coder};
+            font-weight: ${({ theme }) => theme.fontWeight.light};
+            letter-spacing: ${({ theme }) => theme.letterSpacing.tighter};
             text-transform: lowercase;
             text-decoration: none;
             transition: color 0.4s ease-in-out;
             &:before {
               content: "#";
               transition: opacity 0.4s ease-in-out;
-              opacity: 0;
+              opacity: ${({ theme }) => theme.opacity[0]};
               position: absolute;
               top: -0.1em;
               left: -0.5em;
@@ -176,18 +173,19 @@ const Wrapper = styled.div`
           }
           &:hover {
             a {
-              color: var(--coder-font-color);
+              color: ${({ theme }) => theme.fontColor.coder};
               &:before {
-                opacity: 1;
+                opacity: ${({ theme }) => theme.opacity[100]};
               }
             }
           }
         }
         .split {
           display: inline-block;
-          opacity: 0.7;
+          opacity: ${({ theme }) => theme.opacity[75]};
           width: 2px;
-          height: 3em;
+          height: ${({ theme }) => theme.spacing[12]};
+          /* this is specific to the landing page and is manipulated by gsap */
           background-color: var(--landing-font-color);
         }
       }

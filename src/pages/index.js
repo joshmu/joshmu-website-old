@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 
-import LandingPage from "../components/landingPage"
+import LandingPage from "../components/landingPage/landingPage"
 // import Sparkle from "../components/sparkle"
 
 const IndexPage = () => {
