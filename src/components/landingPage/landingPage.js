@@ -8,13 +8,16 @@ import BlockSlider from "./blockSlider"
 import gsap from "gsap"
 
 const LandingPage = () => {
+  /* 100% of height excluding mobile browser navbar and notch */
+  const trueVh = window.innerHeight * 0.01
+
   useEffect(() => {
     // remove flash
     gsap.to("[data-gsap='visibility']", { autoAlpha: 1 })
   }, [])
 
   return (
-    <Wrapper data-gsap="visibility">
+    <Wrapper data-gsap="visibility" trueVh={trueVh}>
       <div className="inner-wrapper">
         <BlockSlider>
           <div className="logo">
@@ -65,7 +68,8 @@ const Wrapper = styled.div`
   visibility: hidden;
 
   width: 100%;
-  height: 100vh;
+  /* 100% of height excluding mobile browser navbar and notch */
+  height: ${({ trueVh }) => Math.floor(trueVh) * 100}px;
   display: flex;
   justify-content: center;
   align-items: center;
