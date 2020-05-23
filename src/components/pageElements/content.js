@@ -21,9 +21,5 @@ export const Content = styled.div`
   box-sizing: border-box;
 
   /* MODIFIERS */
-  /* spacing */
-  ${({ spacing, theme }) => spacing && theme.converter(spacing)}
-  /* media queries */
-  ${({ collapse, theme }) =>
-    collapse && theme.media(collapse, `display: none;`)}
+  ${({ theme }) => theme.modifiers}
 `

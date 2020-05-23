@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle, css } from "styled-components"
 import reset from "styled-reset"
 
 // Inspiration from
@@ -129,11 +129,22 @@ export const theme = {
     mb: "margin-bottom",
   },
   converter: function (cmd) {
-    return cmd.split(" ").map(txt => {
-      const [, cmd, val] = txt.match(/(\w+)(\d)/i)
-      return `${this.dict[cmd]}: ${this.spacing[val]};`
-    })
+    return cmd
+      .split(" ")
+      .map(txt => {
+        const [, cmd, val] = txt.match(/(\w+)(\d)/i)
+        return `${this.dict[cmd]}: ${this.spacing[val]};`
+      })
+      .join("")
   },
+  modifiers: css`
+    ${props => `
+      /* spacing */
+      ${props.spacing && props.theme.converter(props.spacing)}
+      /* media queries */
+      ${props.collapse && props.theme.media(props.collapse, `display: none;`)}
+    `}
+  `,
 }
 
 export const GlobalStyle = createGlobalStyle`

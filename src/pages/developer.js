@@ -13,7 +13,7 @@ const SecondPage = props => (
     <Row spacing="ml8 pt4 pb4">
       <Col>
         <Content>
-          <H1>Josh Mu - Developer Portfolio</H1>
+          <H1 spacing="ml4 pl8 pr4 p2">Josh Mu - Developer Portfolio</H1>
         </Content>
       </Col>
     </Row>
