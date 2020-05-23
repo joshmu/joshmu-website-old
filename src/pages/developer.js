@@ -10,7 +10,7 @@ import { H1, P, Row, Col, Content } from "../components/pageElements"
 const SecondPage = props => (
   <Wrapper>
     <SEO title="Josh Mu Developer Portfolio" />
-    <Row>
+    <Row spacing="ml8 pt4 pb4">
       <Col>
         <Content>
           <H1>Josh Mu - Developer Portfolio</H1>

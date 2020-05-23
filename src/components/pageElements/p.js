@@ -1,12 +1,16 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const P = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.base};
-  margin-top: ${({ theme }) => theme.spacing[3]};
-  strong {
-    font-weight: bold;
-  }
-  em {
-    font-style: italic;
-  }
+  ${({ theme }) => css`
+    font-size: ${theme.fontSize.base};
+    margin-top: ${theme.spacing[3]};
+
+
+    /* MODIFIERS */
+    /* spacing */
+    ${({ spacing, theme }) => spacing && theme.converter(spacing)}
+    /* media queries */
+    ${({ collapse, theme }) =>
+      collapse && theme.media(collapse, `display: none;`)}
+  `}
 `

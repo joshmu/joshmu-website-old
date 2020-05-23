@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-import { media, spacing } from "./helpers"
 
 export const Content = styled.div`
   height: 100%;
@@ -19,11 +18,12 @@ export const Content = styled.div`
       }
     `}
 
-  /* spacing */
   box-sizing: border-box;
-  ${({ margin }) => margin && spacing(margin)}
-  ${({ padding }) => padding && spacing(padding)}
 
+  /* MODIFIERS */
+  /* spacing */
+  ${({ spacing, theme }) => spacing && theme.converter(spacing)}
   /* media queries */
-  ${props => props.collapse && media[props.collapse](`display: none;`)}
+  ${({ collapse, theme }) =>
+    collapse && theme.media(collapse, `display: none;`)}
 `

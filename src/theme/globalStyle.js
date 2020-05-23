@@ -91,6 +91,41 @@ export const theme = {
     "75": "0.75",
     "100": "1",
   },
+  screens: {
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+  },
+
+  ///////////////////////////
+  // HELPERS
+  ///////////////////////////
+  media: function (size, styles) {
+    return `
+    @media only screen and (max-width: ${this.screens[size]}) {
+      ${styles}
+    }
+  `
+  },
+  dict: {
+    p: "padding",
+    pl: "padding-left",
+    pt: "padding-top",
+    pr: "padding-right",
+    pb: "padding-bottom",
+    m: "margin",
+    ml: "margin-left",
+    mt: "margin-top",
+    mr: "margin-right",
+    mb: "margin-bottom",
+  },
+  converter: function (cmd) {
+    return cmd.split(" ").map(txt => {
+      const [, cmd, val] = txt.match(/(\w+)(\d)/i)
+      return `${this.dict[cmd]}: ${this.spacing[val]};`
+    })
+  },
 }
 
 export const GlobalStyle = createGlobalStyle`
