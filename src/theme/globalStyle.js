@@ -108,6 +108,14 @@ export const theme = {
     }
   `
   },
+  mediaNoHover: function (styles) {
+    return `
+      /* smartphones, touchscreens */
+      @media (hover: none) {
+        ${styles}
+      }
+    `
+  },
   dict: {
     p: "padding",
     pl: "padding-left",

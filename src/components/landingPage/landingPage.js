@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 
 import styled from "styled-components"
 import { H1, P } from "../pageElements"
-import { mediaNoHover } from "../../theme/styleHelpers"
 import BlockSlider from "./blockSlider"
 
 import gsap from "gsap"
@@ -143,7 +142,7 @@ const Wrapper = styled.div`
               bottom: 0;
               right: -0.15em;
               opacity: ${({ theme }) => theme.opacity[0]};
-              ${mediaNoHover(`opacity: 1;`)}
+              ${({ theme }) => theme.mediaNoHover(`opacity: 1;`)}
             }
           }
           &:hover {
@@ -159,7 +158,8 @@ const Wrapper = styled.div`
           position: relative;
           font-size: ${({ theme }) => theme.fontSize["2xl"]};
           margin-left: ${({ theme }) => theme.spacing[8]};
-          ${mediaNoHover(`margin-left: 1.4em;`)}
+
+          ${({ theme }) => theme.mediaNoHover(`margin-left: 1.4em;`)}
           a {
             font-family: ${({ theme }) => theme.fontFamily.coder};
             font-weight: ${({ theme }) => theme.fontWeight.light};
@@ -174,7 +174,7 @@ const Wrapper = styled.div`
               position: absolute;
               top: -0.1em;
               left: -0.5em;
-              ${mediaNoHover(`opacity: 1;`)}
+              ${({ theme }) => theme.mediaNoHover(`opacity: 1;`)}
             }
           }
           &:hover {
