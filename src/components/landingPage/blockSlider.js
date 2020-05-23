@@ -6,11 +6,10 @@ import gsap from "gsap"
 import { getCssVar } from "../pageElements/"
 
 const BlockSlider = ({ children, bgColor, blockColor, ...delegated }) => {
-  const tl = gsap.timeline()
   useEffect(() => {
-    // animate
-    animate(tl)
-  }, [tl])
+    // always instantiate third party plugins in component mount since we are building site on the server
+    gsapAnimation()
+  }, [])
 
   return (
     <Wrapper
@@ -64,7 +63,9 @@ const Wrapper = styled.div`
   }
 `
 
-const animate = tl => {
+const gsapAnimation = () => {
+  const tl = gsap.timeline()
+
   // remove flash initially
   // tl.to("body", {
   //   duration: 0,
