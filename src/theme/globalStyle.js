@@ -47,22 +47,6 @@ export const theme = {
     extrabold: "800",
     black: "900",
   },
-  letterSpacing: {
-    tighter: "-0.05em",
-    tight: "-0.025em",
-    normal: "0",
-    wide: "0.025em",
-    wider: "0.05em",
-    widest: "0.1em",
-  },
-  lineHeight: {
-    none: "1",
-    tight: "1.25",
-    snug: "1.375",
-    normal: "1.5",
-    relaxed: "1.625",
-    loose: "2",
-  },
   spacing: {
     px: "1px",
     "0": "0",
@@ -83,6 +67,62 @@ export const theme = {
     "48": "12rem",
     "56": "14rem",
     "64": "16rem",
+  },
+  height: function (val) {
+    const heightDict = {
+      auto: "auto",
+      ...this.spacing,
+      full: "100%",
+      screen: "100vh",
+    }
+    return `height: ${heightDict[val]};`
+  },
+  width: function (val) {
+    const widthDict = {
+      auto: "auto",
+      ...this.spacing,
+      full: "100%",
+      screen: "100vw", // only diff from height func
+    }
+    return `width: ${widthDict[val]};`
+  },
+  letterSpacing: {
+    tighter: "-0.05em",
+    tight: "-0.025em",
+    normal: "0",
+    wide: "0.025em",
+    wider: "0.05em",
+    widest: "0.1em",
+  },
+  lineHeight: {
+    none: "1",
+    tight: "1.25",
+    snug: "1.375",
+    normal: "1.5",
+    relaxed: "1.625",
+    loose: "2",
+  },
+  maxWidth: {
+    xs: "20rem",
+    sm: "24rem",
+    md: "28rem",
+    lg: "32rem",
+    xl: "36rem",
+    "2xl": "42rem",
+    "3xl": "48rem",
+    "4xl": "56rem",
+    "5xl": "64rem",
+    "6xl": "72rem",
+    full: "100%",
+  },
+  minHeight: {
+    "0": "0",
+    full: "100%",
+    screen: "100vh",
+  },
+  minWidth: {
+    "0": "0",
+    full: "100%",
   },
   opacity: {
     "0": "0",
@@ -139,10 +179,18 @@ export const theme = {
   },
   modifiers: css`
     ${props => `
+      /* height */
+      ${props.height ? props.theme.height(props.height) : ""}
+      /* width */
+      ${props.width ? props.theme.height(props.width) : ""}
       /* spacing */
-      ${props.spacing && props.theme.converter(props.spacing)}
+      ${props.spacing ? props.theme.converter(props.spacing) : ""}
       /* media queries */
-      ${props.collapse && props.theme.media(props.collapse, `display: none;`)}
+      ${
+        props.collapse
+          ? props.theme.media(props.collapse, `display: none;`)
+          : ""
+      }
     `}
   `,
 }

@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components"
 
 export const Content = styled.div`
-  height: 100%;
-  width: 100%;
+  height: ${({ theme }) => theme.height["full"]};
+  height: ${({ theme }) => theme.width["full"]};
 
   /* 'center' will center the child elem as well as have options to move elem off the center */
   ${({ center }) =>
@@ -12,10 +12,6 @@ export const Content = styled.div`
       /* control positioning of child element if we do not want it centered */
       justify-content: ${({ x }) => (x ? x : "center")};
       align-items: ${({ y }) => (y ? y : "center")};
-      > * {
-        margin: 0;
-        padding: 0;
-      }
     `}
 
   box-sizing: border-box;
