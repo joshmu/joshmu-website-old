@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import styled from "styled-components"
 import { H1, P } from "../pageElements"
@@ -8,10 +8,13 @@ import BlockSlider from "./blockSlider"
 import gsap from "gsap"
 
 const LandingPage = () => {
-  /* 100% of height excluding mobile browser navbar and notch */
-  const trueVh = window.innerHeight * 0.01
+  const [trueVh, setTrueVh] = useState(null)
 
   useEffect(() => {
+    // since we wait for component to mount the 'window' object should be available
+    // 100% of height excluding mobile browser navbar and notch
+    setTrueVh(window.innerHeight * 0.01)
+
     // remove flash
     gsap.to("[data-gsap='visibility']", { autoAlpha: 1 })
   }, [])

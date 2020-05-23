@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import gsap from "gsap"
 
-// import { getCssVar } from "../hooks/useHelpers"
+import { getCssVar } from "../pageElements/"
 
 const BlockSlider = ({ children, bgColor, blockColor, ...delegated }) => {
   const tl = gsap.timeline()
@@ -135,8 +135,5 @@ const animate = tl => {
   //   delay: -0.6,
   // })
 }
-
-const getCssVar = cssVar =>
-  getComputedStyle(document.documentElement).getPropertyValue(cssVar)
 
 export default BlockSlider
