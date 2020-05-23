@@ -82,6 +82,7 @@ export const theme = {
       auto: "auto",
       ...this.spacing,
       full: "100%",
+      fitContent: "fit-content",
       screen: "100vw", // only diff from height func
     }
     return `width: ${widthDict[val]};`
