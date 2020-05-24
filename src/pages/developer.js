@@ -4,10 +4,16 @@ import { Link } from "gatsby"
 
 import SEO from "../components/gatsby/seo"
 
-import styled from "styled-components"
-import { H1, P, Row, ColWithBg, Content } from "../components/pageElements"
+import {
+  Wrapper,
+  Row,
+  ColWithBg,
+  Content,
+  H1,
+  P,
+} from "../components/pageElements"
 
-const SecondPage = props => (
+const DeveloperPage = props => (
   <Wrapper>
     <SEO title="Josh Mu Developer Portfolio" />
     <Row>
@@ -31,6 +37,4 @@ const SecondPage = props => (
   </Wrapper>
 )
 
-const Wrapper = styled.div``
-
-export default SecondPage
+export default DeveloperPage

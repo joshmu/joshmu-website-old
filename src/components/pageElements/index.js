@@ -1,3 +1,4 @@
+export * from "./wrapper"
 export * from "./row"
 export * from "./col"
 export * from "./content"

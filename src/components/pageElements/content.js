@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components"
 
 export const Content = styled.div`
-  height: ${({ theme }) => theme.height["full"]};
-  width: ${({ theme }) => theme.width["fitContent"]};
+  ${({ theme }) => theme.height("full")}
+  ${({ theme }) => theme.width("full")}
 
   /* 'center' will center the child elem as well as have options to move elem off the center */
   ${({ center }) =>
