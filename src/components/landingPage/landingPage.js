@@ -1,10 +1,9 @@
+import gsap from "gsap"
 import React, { useEffect, useState } from "react"
-
 import styled from "styled-components"
+
 import { H1, P } from "../pageElements"
 import BlockSlider from "./blockSlider"
-
-import gsap from "gsap"
 
 const LandingPage = () => {
   const [trueVh, setTrueVh] = useState(null)
@@ -47,7 +46,7 @@ const LandingPage = () => {
             <div className="split"></div>
             <span className="coder">
               <a
-                href="https://github.com/joshmu"
+                href="https://joshmu.dev"
                 target="_blank"
                 rel="noopener noreferrer"
               >
